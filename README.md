@@ -1,0 +1,25 @@
+# DevTrack - Engineering Issue Tracker
+
+DevTrack is a minimal Django-based backend for tracking engineering bugs, priorities, and statuses.
+
+## How to Run
+1. Navigate to the project folder: `cd devtrack`
+2. Activate the virtual environment: `source ../venv/bin/activate`
+3. Run the server: `python manage.py runserver`
+
+## Endpoints
+- `POST /api/reporters/`: Create a new reporter (JSON body required).
+- `GET /api/reporters/`: Get all reporters.
+- `GET /api/reporters/?id=1`: Get a single reporter by ID.
+- `POST /api/issues/`: Create a new issue (subclasses based on priority).
+- `GET /api/issues/`: Get all issues.
+- `GET /api/issues/?status=open`: Filter issues by status.
+- `GET /api/issues/?id=1`: Get a single issue by ID (Returns 404 if not found).
+
+## Design Decision
+For the `describe()` method, I chose to use **Polymorphism**. I created a base `Issue` class with a default description and two subclasses: `CriticalIssue` and `LowPriorityIssue`. 
+
+**Why:** This follows the Open/Closed Principle. If the engineering team wants a new description style for "Medium" priority later, we can simply add a new subclass without changing the logic in the views or the base class.
+
+## Screenshots
+*(Attached in GitHub repository)*
