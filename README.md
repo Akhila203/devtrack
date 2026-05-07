@@ -28,9 +28,9 @@ This screenshot shows the OOP inheritance logic working. Notice the "[URGENT]" m
 ![Success Screenshot](./screenshots/success.png)
 
 ### 2. Failure Case: Validation Error (400 Bad Request)
-This screenshot shows the `validate()` method catching an empty title.
-![Validation Failure](./screenshots/failure.png)
+This screenshot shows the `validate()` method in the `models.py` catching an empty title field.
+![400 Failure Screenshot](./screenshots/failure_400.png)
 
 ### 3. Failure Case: Resource Not Found (404 Not Found)
-This screenshot shows the API returning a 404 when looking up an ID that does not exist.
-![404 Failure](./screenshots/failure.png)
+This screenshot shows the API returning a 404 error when a user tries to GET an issue ID that does not exist in the system.
+![404 Failure Screenshot](./screenshots/failure_404.png)
